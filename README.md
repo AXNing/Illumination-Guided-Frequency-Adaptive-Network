@@ -4,17 +4,18 @@
 
 
 ### The overall framework of the IG-FAN
-![](https://github.com/AXNing/DFDNet/blob/main/framework.jpg)
+![](https://github.com/AXNing/Illumination-Guided-Frequency-Adaptive-Network/blob/main/framework.jpg)
 
 ### Installation
-
-1. Clone the repo
+1. Environment
+CUDA 11.8; Python 3.8; torch 1.11
+2. Clone the repo
 
     ```bash
     git clone https://github.com/AXNing/Illumination-Guided-Frequency-Adaptive-Network.git
     ```
 
-1. Install dependent packages
+3. Install dependent packages
 
     ```bash
     cd IG_FAN
@@ -59,7 +60,10 @@ Download the Flare7k++ dataset [here](https://github.com/ykdai/Flare7K).
 ### Training model
 
 
-**Training**
+
+Download pretrained decomposition model weights [here](https://drive.google.com/drive/folders/1a02LFXPxZBIfj0ffO4nJivn_uWuycX2R?usp=drive_link).
+
+Add weight path in file options/IG_FAN_option.yml
 
 Please use:
 
@@ -71,6 +75,9 @@ To train a model with your own data/model, you can edit the `options/IG_FAN_opti
 
 
 ### Inference Code
+
+You can download our trained model weights [here](https://drive.google.com/drive/folders/1a02LFXPxZBIfj0ffO4nJivn_uWuycX2R?usp=drive_link).
+
 To estimate the flare-free images with the checkpoint pretrained on Flare7K++ dataset, you can run the `test.sh` by using:
 
 ```
@@ -78,7 +85,7 @@ python test.py --input ./datasets/Flare7Kpp/test_data/real/input --output ./resu
 python evaluate.py --input ./results --gt ./datasets/Flare7Kpp/test_data/real/gt --mask ./datasets/Flare7Kpp/test_data/real/mask
 ```
 
-### Test datasets
+### Datasets
 Flare7k++ real and synthetic nighttime flare-corrupted: [link](https://github.com/ykdai/Flare7K). 
 
 Real-world nighttime flare-corrupted dataset: [link](https://github.com/ykdai/Flare7K).
