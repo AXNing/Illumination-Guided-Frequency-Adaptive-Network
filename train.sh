@@ -1,0 +1,1 @@
+python ~/basicsr/train.py -opt ~/options/IG_FAN_option.yml
